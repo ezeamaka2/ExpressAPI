@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
+    "test": "mocha -r @babel/register",
     "prestart": "babel ./src --out-dir build",
     "dev": "nodemon --exec babel-node ./src/app",
     "lint": "./node_modules/.bin/eslint ./src",
