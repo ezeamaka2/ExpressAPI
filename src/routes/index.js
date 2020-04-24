@@ -1,8 +1,10 @@
-const express = require("express");
+import express from "express";
+
 const router = express.Router();
 
-router.get("/", function (req, res, next) {
-  return res.status(200).json({ message: "Welcome to Express API template" });
+router.get("/", (req, res, next) => {
+  res.send("Stage two, dependencies setup");
+  next();
 });
 
-module.exports = router;
+export default router;

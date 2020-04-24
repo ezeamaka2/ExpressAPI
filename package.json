@@ -5,7 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app"
+    "prestart": "babel ./src --out-dir build",
+    "dev": "nodemon --exec babel-node ./build/app",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "postpretty": "yarn lint --fix"
   },
   "author": "Collins Eze",
   "license": "MIT",
@@ -22,6 +26,10 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.5"
   }
 }
