@@ -1,6 +1,6 @@
 # Express API template
 
-[![Build Status](https://travis-ci.org/ezecollins2/ExpressAPI.svg?branch=master)](https://travis-ci.org/ezecollins2/ExpressAPI)
+[![Build Status](https://travis-ci.org/ezecollins2/ExpressAPI.svg?branch=05-ci)](https://travis-ci.org/ezecollins2/ExpressAPI)
 
 [![Coverage Status](https://coveralls.io/repos/github/ezecollins2/ExpressAPI/badge.svg?branch=04-first-test)](https://coveralls.io/github/ezecollins2/ExpressAPI?branch=04-first-test)
 
