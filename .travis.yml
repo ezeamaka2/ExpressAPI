@@ -8,7 +8,7 @@ matrix:
   branches:
 cache:
   directories: [node_modules]
-install: npm install -g npm@latest
+install: npm ci
 after_success: npm run coverage
 before_script:
   - ./cc-test-reporter
