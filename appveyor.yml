@@ -2,7 +2,7 @@ environment:
   matrix:
     - nodejs_version: "12"
 install:
-  - npm
+  - npm install -g npm@latest
 test_script:
   - npm run test:single
 build: off
