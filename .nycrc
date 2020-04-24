@@ -1,0 +1,16 @@
+{
+"reporter": [
+    "html",
+    "text",
+    "lcov"
+],
+
+
+"all": true,
+{
+"include": [
+      "node_modules/**/nyc.js"
+ ],
+"excludeNodeModules": false
+}
+}
