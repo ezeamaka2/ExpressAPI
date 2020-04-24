@@ -5,6 +5,7 @@ env:
 matrix:
   include:
     - node_js: 12
+  branches:
 cache:
   directories: [node_modules]
 install: npm
