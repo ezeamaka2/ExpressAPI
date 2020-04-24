@@ -13,3 +13,5 @@ app.use(cookieParser());
 app.use("/v1", indexRouter);
 
 app.listen(PORT);
+
+export default app;
