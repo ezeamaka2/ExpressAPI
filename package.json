@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register --exit",
+    "test": "nyc --require @babel/register mocha --exit -w --exit",
+    "test-single": "nyc --require @babel/register mocha --exit",
     "prestart": "babel ./src --out-dir build",
     "dev": "nodemon --exec babel-node ./src/app",
     "lint": "./node_modules/.bin/eslint ./src",

@@ -18,4 +18,3 @@ script:
   - npm run test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - ESM_DISABLE_CACHE=1 nyc --cache=false npm test && nyc report --reporter=text-lcov | coveralls
