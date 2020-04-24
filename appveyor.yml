@@ -4,5 +4,5 @@ environment:
 install:
   - npm
 test_script:
-  - npm run test
+  - npm test
 build: off
