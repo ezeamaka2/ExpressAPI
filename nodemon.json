@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "package.json",
+    "nodemon.json",
+    ".eslintrc.json",
+    ".babelrc",
+    ".prettierrc",
+    "src/",
+    "app.js",
+    ".env"
+  ],
+  "verbose": true,
+  "ignore": ["*.test.js", "*.spec.js"]
+}
