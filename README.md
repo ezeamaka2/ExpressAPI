@@ -6,4 +6,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ccb3182ee1cb13bedc15/maintainability)](https://codeclimate.com/github/ezecollins2/ExpressAPI/maintainability)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ccb3182ee1cb13bedc15/test_coverage)](https://codeclimate.com/github/ezecollins2/ExpressAPI/test_coverage)
+
 [![Build status](https://ci.appveyor.com/api/projects/status/wpg8dxw0278ke6r9?svg=true)](https://ci.appveyor.com/project/ezecollins2/expressapi)
