@@ -18,3 +18,15 @@ script:
   - npm run test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+services:
+  - postgresql
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+      - postgresql-10
+      - postgresql-client-10
+before_install:
+  - psql -c 'create database testdb;' -U postgres
+  - cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
+  - /etc/init.d/postgresql restart

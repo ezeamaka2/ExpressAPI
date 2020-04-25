@@ -23,7 +23,7 @@
     "comma-dangle": [0],
     "arrow-parens": [0],
     "object-curly-spacing": ["warn", "always"],
-    "array-bracket-spacing": ["warn", "always"],
+    "array-bracket-spacing": ["warn", "never"],
     "import/prefer-default-export": [0]
   }
 }

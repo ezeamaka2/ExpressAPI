@@ -10,7 +10,8 @@
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "yarn lint --fix",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "runQuery": "babel-node ./src/utils/runQuery"
   },
   "author": "Collins Eze",
   "license": "MIT",
@@ -31,6 +32,7 @@
     "mocha": "^7.1.1",
     "morgan": "^1.10.0",
     "nyc": "^15.0.1",
+    "pg": "^8.0.3",
     "sinon-chai": "^3.5.0",
     "supertest": "^4.0.2"
   },
