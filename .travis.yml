@@ -1,38 +1,40 @@
 language: node_js
 env:
   global:
-    - CC_TEST_REPORTER_ID=9ccebe1836351143aed5f743676c19b885cd2a7407e46e878bb16ca121b38bbb
+  - CC_TEST_REPORTER_ID=9ccebe1836351143aed5f743676c19b885cd2a7407e46e878bb16ca121b38bbb
 matrix:
   include:
-    - node_js: 12
-  branches:
+  - node_js: 12
+  branches: 
 cache:
-  directories: [node_modules]
+  directories:
+  - node_modules
 install: npm ci
 after_success: npm run coverage
 before_script:
-  - psql -c 'create database testdb;' -U postgres
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- psql -c 'create database testdb;' -U postgres
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - npm run test
+- npm run test
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 services:
-  - postgresql
+- postgresql
 addons:
-  postgresql: "10"
+  postgresql: '10'
   apt:
     packages:
-      - postgresql-10
-      - postgresql-client-10
+    - postgresql-10
+    - postgresql-client-10
 before_install:
-  - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
-  - sudo /etc/init.d/postgresql restart
+- sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
+- sudo /etc/init.d/postgresql restart
 deploy:
   provider: heroku
-  api_key:
-    secure: "5c3d0f110d9d7d3793792417f3d817d3de665343"
   app:
     master: expresspostgre
+  api_key:
+    secure: ZZrpUJmUjl2KW1Dh2e0QGNSRm3ZVsmJtnhS8xVmrk1vo2u1mjf11vS+qkcDWfB2rqSnVbx0YqOVjzSQLP9sMrOwaEdppBz7IqMqHpWjp1bdvFsI3nTeIFXdMT61ACWU8uFzcyTAqGTPidiE+3CWj4Pvs6wQXo7Fia88K0lhOA8ypRwdFzJ9caJNBE7qyqFXUJUqkx6Or9foYsUJgy/kdPU0biqJxlSJXKRWpwBf68V3oQDaOAaOcWFVuwtbi10grS7O9NM0ddGwdoznQyMbpyGrYQadseltF1S6yn4mzlPD3BbdFKmChDTv2wsAKC4Abm0vLpMM90lXSAdBhRmtYPo+HNknwRjjkQ8YnmlIf9arCGYnYpwnmMOGIKPo7U0G7ZmahmTYeZV+9EkVfuxi9QvNOSyIoZKs7K/tWWAojIatcwN0Vr3KMNZKP5ra4gEmH53rQPwgRq5k74AIrGied7iKkooYLflAN9+n4INPx/91fdACI0mu78Tc8jbZPHPHFHok6SLQo7fX4DzA+pOsUmEUIo9uAsuXPKQaJzSYDGQ5kPaqnvlSHD+VMA+skYlUhGZe9iGHM3AMm8aeTeKoelUe487vV4ccOMIJYXMYbiQYGfA8MoBN2Z4ZWnucyPNHlEEfpBBGuSFun/vaYg+D3EDaawGJm1IEo4lgAfe7J7D8=
