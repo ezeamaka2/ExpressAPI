@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node ./build/app",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register --exit",
     "prestart": "babel ./src --out-dir build",
     "dev": "nodemon --exec babel-node ./src/app",
