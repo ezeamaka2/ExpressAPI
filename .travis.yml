@@ -30,3 +30,9 @@ addons:
 before_install:
   - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
   - sudo /etc/init.d/postgresql restart
+deploy:
+  provider: heroku
+  api_key:
+    secure: "5c3d0f110d9d7d3793792417f3d817d3de665343"
+  app:
+    master: expresspostgre
